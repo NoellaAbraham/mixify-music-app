@@ -23,6 +23,5 @@
 - **Vite** – Fast build and dev environment
 - **JavaScript / JSX** – Application logic and structure
 - **CSS** – Custom styles and animations
-- *(Add any backend tech here if used)*
 
 ---
