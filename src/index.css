@@ -1,0 +1,440 @@
+/* Main container */
+
+*{
+  color: white;
+}
+.app-container {
+  display: grid;
+  grid-template-columns: 15% 50% 35%; /* Left sidebar 10%, Middle section 40%, Right section 50% */
+  height: 100vh;
+  background-color: #0d1b2a;
+  overflow: hidden;
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.loading-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #162544;
+  color: white;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-form input {
+  width: 80%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #2089d6;
+  border-radius: 5px;
+  background-color: #0d1b2a;
+  color: white;
+}
+
+.app-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+
+/* Sidebar (Left) */
+.sidebar {
+  padding: 20px;
+  background-color: #162544;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-logo {
+  width: 100px;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.sidebar button {
+  background-color: #1f3b5b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar button:hover {
+  background-color: #2089d6;
+}
+
+/* Middle Section (Scrollable) */
+.middle-section {
+  padding: 50px;
+  background-color: #0d1b2a;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.middle-section h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Song Cards */
+.song-card {
+  background-color: #1f3b5b;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 180px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.song-card:hover {
+  background-color: #2089d6;
+}
+
+.song-image {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.song-card h3, .song-card p {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+.song-card.selected {
+  background-color: #2089d6;
+}
+
+/* Right Sidebar (Slideshow or Song Details) */
+.right-sidebar {
+  padding: 20px;
+  background-color: #162544;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  overflow-y: auto;  
+}
+
+/* Slideshow section styling */
+.slideshow-section {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Title above the slideshow */
+.slideshow-section h1 {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 100px; 
+}
+
+/* Slideshow image styling */
+.slide {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-top: 50px; 
+  animation: fadeInOut 5s ease-in-out infinite;
+}
+
+
+.song-details {
+  color: white;
+  text-align: center;
+}
+
+.song-details-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-cover {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+/* Add Playlist Form */
+button {
+  background-color: #1f3b5b;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1a6ba8;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #162544;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+form label {
+  color: white;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="file"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #2089d6;
+  border-radius: 5px;
+  background-color: #0d1b2a;
+  color: white;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+}
+
+
+.filter-container {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+#filter {
+  padding: 5px 10px;
+  background-color: #1f3b5b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#filter:focus {
+  outline: none;
+  border-color: #2089d6;
+}
+
+.reaction-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-song-form {
+  max-height: 70vh; 
+  overflow-y: auto; 
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #162544;
+  border-radius: 8px;
+}
+
+.delete-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.confirm-delete, .cancel-delete {
+  padding: 10px 20px;
+  background-color: #2089d6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-delete:hover {
+  background-color: #ff5c5c;
+}
+
+.cancel-delete:hover {
+  background-color: #555;
+}
+
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+
+/* Footer */
+.footer {
+  width: 100%;
+  background-color: #162544;
+  color: #b3b3b3;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #2089d6;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #0d1b2a;
+  color: white;
+}
+
+.waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.bar {
+  width: 8px;
+  height: 30px;
+  background-color: whitesmoke;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.bar:nth-child(1) { animation-delay: 0.1s; }
+.bar:nth-child(2) { animation-delay: 0.2s; }
+.bar:nth-child(3) { animation-delay: 0.3s; }
+.bar:nth-child(4) { animation-delay: 0.4s; }
+.bar:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes bounce {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Keyframes for slideshow animation */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white; /* trail color */
+  pointer-events: none; /* Prevent trail from interfering with clicks */
+  animation: fadeOut 0.5s ease-out forwards; /* Fading animation */
+}
+
+/* Keyframes for the fade-out effect */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5); /* Shrink slightly as it fades */
+  }
+}
+
