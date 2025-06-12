@@ -11,7 +11,7 @@
 - 🧑‍💼 **Admin Role**:
   - ➕ Add new songs
   - ❌ Delete existing songs
-- 🔍 **Filter** songs by genre or category
+- 🔍 **Filter** songs by "liked songs", "loved songs" and "disliked songs"
 - ⏳ **Loading screen** for smoother transitions
 - 🎧 Responsive design for desktop and mobile
 
